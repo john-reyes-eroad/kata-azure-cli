@@ -6,7 +6,7 @@ It is trying to achieve a simple, repeatable workflow for:
 
 - creating and tagging Azure resource groups
 - listing matching resource groups in a readable format
-- removing those groups once a kata session is complete
+- tearing down those groups once a kata session is complete
 
 The shell scripts are intentionally lightweight, but they now validate required environment variables before calling the Azure CLI so they fail fast when a value is missing.
 
