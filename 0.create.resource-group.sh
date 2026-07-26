@@ -18,5 +18,5 @@ echo "DATE_DELETE_AFTER=${DATE_DELETE_AFTER}"
 az group create \
   --name "${RESOURCE_GROUP_NAME}" \
   --location "${LOCATION}" \
-  --tags "owner_email=${OWNER_EMAIL}" "owner_platform=${OWNER_PLATFORM}" "date_delete_after=${DATE_DELETE_AFTER}"
-
+  --tags "owner_email=${OWNER_EMAIL}" "owner_platform=${OWNER_PLATFORM}" "date_delete_after=${DATE_DELETE_AFTER}" "date_deletion=${DATE_DELETE_AFTER}" \
+  --output none

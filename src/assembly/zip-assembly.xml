@@ -30,7 +30,7 @@
             <directory>${project.build.directory}/azure-functions/${functionAppName}</directory>
             <outputDirectory>/</outputDirectory>
             <includes>
-                <include>HttpTriggerJava/**</include>
+                <include>BEName/function.json</include>
             </includes>
         </fileSet>
     </fileSets>

@@ -16,7 +16,7 @@ import java.util.Optional;
  */
 public class Function {
 
-    @FunctionName("HttpTriggerJava")
+    @FunctionName("BEName")
     public HttpResponseMessage run(
         @HttpTrigger(
             name = "req",
@@ -29,9 +29,28 @@ public class Function {
 
         context.getLogger().info("Java HTTP trigger processed a request.");
 
+        String id = request.getQueryParameters().get("id");
+
+        if (id == null || id.isEmpty()) {
+            return request
+                .createResponseBuilder(HttpStatus.BAD_REQUEST)
+                .body("Missing 'id' query parameter")
+                .build();
+        }
+
+        String envVarName = "BE_NAME_" + id.toUpperCase();
+        String name = System.getenv(envVarName);
+
+        if (name == null) {
+            return request
+                .createResponseBuilder(HttpStatus.NOT_FOUND)
+                .body("Environment variable " + envVarName + " not found")
+                .build();
+        }
+
         return request
             .createResponseBuilder(HttpStatus.OK)
-            .body("John Reyes")
+            .body(name)
             .build();
     }
 }
