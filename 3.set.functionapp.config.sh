@@ -6,7 +6,7 @@ az webapp config appsettings set \
     --resource-group "${RESOURCE_GROUP_NAME}" \
     --settings \
         BE_NAME_TL="John Reyes" \
-        BE_NAME_GRAD1="Josh Nguyen" \
-        BE_NAME_GRAD2="Josh Padua" \
-        BE_NAME_GRAD3="Shihoo Park" \
+        BE_NAME_GRAD1="SoshN" \
+        BE_NAME_GRAD2="SoshP" \
+        BE_NAME_GRAD3="Jihoo" \
     --output none
